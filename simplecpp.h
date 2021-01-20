@@ -148,6 +148,10 @@ namespace simplecpp {
             return tok;
         }
 
+        bool isSystemHeader() const {
+            return this->string[0] == '<';
+        }
+
         void printAll() const;
         void printOut() const;
     private:

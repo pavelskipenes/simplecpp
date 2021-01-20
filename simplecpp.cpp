@@ -2720,7 +2720,7 @@ void simplecpp::preprocess(simplecpp::TokenList &output, const simplecpp::TokenL
 
                 const Token *inctok = inc2.cfront();
 
-                const bool systemheader = (inctok->op == '<');
+                const bool systemheader = inctok->isSystemHeader();
                 const std::string header(realFilename(inctok->str().substr(1U, inctok->str().size() - 2U)));
                 std::string header2 = getFileName(filedata, rawtok->location.file(), header, dui, systemheader);
                 if (header2.empty()) {
